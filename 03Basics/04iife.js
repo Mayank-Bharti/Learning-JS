@@ -1,5 +1,5 @@
 // Immediately Invoked Function Expressions (IIFE)=>jo function immediately execute ho jaye or real reason==> global scope ke pollution se problem hoti h kayi bar
-// to us global scope ke variable of hatane ke liye hamlog iife ka use kiya 
+// to us global scope ke variable ko hatane ke liye hamlog iife ka use kiya 
 
 
 (function chai(){
