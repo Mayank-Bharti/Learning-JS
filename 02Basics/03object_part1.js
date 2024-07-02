@@ -25,7 +25,8 @@ const JsUser = {
  console.log(JsUser["full name"])
  console.log(JsUser[mySym]) //to print symbol data types
  console.log(typeof(JsUser[mySym])) //doubt: Abhi bhi type string hi de raha h??=> Answer: Type string hi iska batayega but agar JsUser print karenge to last mein aayega [Symbol(key1)]:'mykey1' and agar square bracket nahi denge to normal string ke tarah aayega
-JsUser.email = "hitesh@chatgpt.com"
+console.log(typeof(mySym)) //symbol, // doubt solution
+ JsUser.email = "hitesh@chatgpt.com"
  //Object.freeze(JsUser) //Now we can't do changes in JsUser.
 JsUser.email = "hitesh@microsoft.com"
  console.log(JsUser);
@@ -42,4 +43,4 @@ JsUser.greetingTwo = function(){
 // console.log(JsUser.greeting()); //Return ke jagah pe print use karne pe kuch return to hoga na , isliye run karne Hello JS user and undefined aata h.
 // console.log(JsUser.greetingTwo());
 
-return JsUser.greeting(), JsUser.greetingTwo();
+ return JsUser.greeting(), JsUser.greetingTwo();

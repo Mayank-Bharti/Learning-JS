@@ -43,7 +43,7 @@ console.log(typeof anotherId);
 
 let myname='mayank'
 let anothername=myname
-anothername='madhuri'
+anothername='ananya'
 console.log(myname)
 console.log(anothername)
 let userone = {

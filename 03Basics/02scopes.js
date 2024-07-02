@@ -1,4 +1,4 @@
-//Block scope : we can defined inside a bolck of code like function,condition ,control flow ,etc..
+//Block scope : we can defined inside a block of code like function,condition ,control flow ,etc..
 //Global scope:Define globally
 //problem in using var is when we define var first inside the block scope and changes globally , then also outside that block scope its values is value which is inside the block scope
 //closure function : jo child function h wo parent function ke variable ko access kar leta h or andar ka function bahar ke variable ko access karta h

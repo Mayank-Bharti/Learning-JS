@@ -12,11 +12,18 @@ const dc_heros = ["superman", "flash", "batman"]
 const all_new_heros = [...marvel_heros, ...dc_heros] //spread operator=> ...=>kanch ka glass lo aur drop kar do to wo spread ho gya
 
  console.log(all_new_heros);//['thor','Ironman','spiderman',  [ 'superman', 'flash', 'batman' ], 'superman','flash','batman']
-
+const a=all_new_heros.flat(Infinity)
+ console.log(a); //[
+//   'thor',      'Ironman',
+//   'spiderman', 'superman',
+//   'flash',     'batman',
+//   'superman',  'flash',
+//   'batman'
+// ]
 const another_array = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]]
 
 const real_another_array = another_array.flat(Infinity) //infinity is depth means they can see how many array
-                                                       //is inside one array and convert to single array , we can also give cou nt of depth in place of infinity
+                                                       //is inside one array and convert to single array , we can also give count of depth in place of infinity
 console.log(real_another_array);//[1,2,3,4,5,6,7,6,7,4,5]
 
 
