@@ -1,0 +1,44 @@
+HTML LECTURE-1,2,3
+
+Apache 2.0: web server. All linux system , apache server runs.In any website go daddy etc.. behind the scene apache software is only working.
+default file is index.html.
+
+A tool given by vs code by default is emmet.
+ eg. ! => one short cut of emmet only
+
+ HTML is syntacical language.Simple and declarative language.
+ h1 is core part of page
+ h2 is subheading 
+
+ HTML tags is insensitive.
+
+ Meta tag of html by google read docs.
+
+ Short cut of meta tag in vs code ==> type "meta:"
+
+ HTML is parent , head and body is child and title and h1 is grand child of html.
+
+ element,tags and attributes difference: 
+
+ element: <h1 title="one"> heading 1</h1>
+ tags: h1
+ attributes: title="one"
+
+ self closing tag: </ br> 
+
+ for anchor tag: href is attributes. short cut: "a:"
+ eg:  <a href="google.com">google</a>
+
+ read docs of attributes of tags,heading element
+
+ paragraph short cut: p>lorem20
+
+ pre tag 
+
+ Read docs: 
+ 1. Meta tag by html from google docs
+ 2. heading element docs
+ 3. attributes of anchor tag,header tag
+ 4. Paragraph tag,pre tag, anchor tag,header tag 
+
+

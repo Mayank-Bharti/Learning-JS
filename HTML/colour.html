@@ -1,0 +1,95 @@
+<!-- Today's learning: color format,hsla,rgba,styling and its priority,  blockquote tag, quote tag, cite tag, abbreviation tag, address tag, article tag, bdo tag, cite attributes, title attributes, dir attributes. -->
+<!-- LEC-5 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- The priority order of CSS types is: Inline CSS > Internal CSS > External CSS. -->
+
+    <!-- short cut to add external file:- link:css -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- internal styling:by using a <style> element in the <head> section -->
+     <style>
+        h3{
+            color:blue;
+        }
+    </style>
+    <!-- external styling:by using a <link> element to link to an external CSS file-->
+    <link rel="stylesheet" href="style.css">
+     <!-- <style>
+        h3{
+            color:black;
+        }
+    </style> -->
+    <title>Document</title>
+</head>
+<body>
+    <!-- comment
+     duplicate:shift+alt+down arrow -->
+    <h1>Formatting 1</h1>
+    <h1>Formatting 2</h1>
+    <h1>Formatting 3</h1>
+    <p>this is <strong>important</strong></p>
+    <p>this is <i>important</i></p>
+    <p>this is <em>important</em></p>
+ <!-- short cut to create unordered list :ul>li*4 -->
+    <ul>
+        <li>b tag; strong tag</li>
+        <li>i tag; em tag</li>
+        <li>small</li>
+        <li>sub,sup</li>
+        <li>USE OF del, mark? WEBSITE LATEST USING DEL,MARK?</li>
+    </ul>
+
+    <p>H <sub>2</sub>O</p>
+    <!-- inline styling:by using the style attribute inside HTML elements -->
+     <!-- we will get colour format in hwering over color in vs code. -->
+     <!-- code always be readable -->
+    <h3 
+    style="
+    text-align: center; 
+    background-color: #00ff4c96;
+    color:blueviolet
+    "
+    >THIS TAG NEEDS SOME STYLING.</h3>
+
+    <p>
+        <blockquote cite="google">this is my  quote a</blockquote>
+        <q cite="flipkart">this is my  quote b</q>
+        <abbr title="HYPER TEXT MARKUP LANGUAGE">HTML</abbr>
+        <address>what to do</address>
+        <article>mayank</article>
+    </p>
+
+     <cite>this is my  quote c</cite>
+      <bdo dir="rtl">mayank</bdo>
+    
+</body>
+</html>
+
+<!-- docs read: blockquote tag, quote tag, cite tag, abbreviation tag, address tag, article tag, bdo tag, cite attributes, title attributes, dir attributes. -->
+
+<!-- hsla(hue, saturation, lightness,alpha)
+
+Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue.
+no hue at 0.
+
+Saturation
+Saturation can be described as the intensity of a color.
+
+100% is pure color, no shades of gray.
+
+50% is 50% gray, but you can still see the color.
+
+0% is completely gray; you can no longer see the color.
+
+Lightness
+The lightness of a color can be described as how much light you want to give the color, where 0% means no light (black), 50% means 50% light (neither dark nor light), and 100% means full lightness (white).
+
+The alpha (opacity)parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all): -->
+
+<!-- MDN:  Address:Typically an <address> element can be placed inside the <footer> element of the current section, if any.
+for small quotes which do not require line breaks, we use <q></q> 
+for long quotes we use <blockquote></blockquote>
+both of the above use cite attribute which tells browser from where the quote was taken.
+<address></address> is used to specify address of business/person etc helps in SEO optimization -->
