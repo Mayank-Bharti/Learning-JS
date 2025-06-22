@@ -18,10 +18,10 @@
  <!-- short cut to create unordered list :ul>li*4 -->
     <ul>
         <li>b tag; strong tag</li>
-        <li>i tag; em tag</li>
-        <li>small</li>
-        <li>sub,sup</li>
-        <li>USE OF del, mark? WEBSITE LATEST USING DEL,MARK?</li>
+        <li><i>i tag;</i> em tag</li>
+        <li><small>small tag</small></li>
+        <li><sub>sub tag</sub>,<sup>sup tag</sup></li>
+        <li>USE OF <del>del tag</del>, <mark>mark tag</mark>? WEBSITE LATEST USING DEL,MARK?</li>
     </ul>
 
     <p>H <sub>2</sub>O</p>
@@ -41,7 +41,7 @@
 
 <b>  → This tag is used to make text look bold, but it does not mean the text is important — it is just for styling.
 Use <b> when:
-1. You want to make some text stand out visually.
+1. we want to make some text stand out visually.
 2. The bold text is not important, just styled to catch the readers eye.
 Examples:
 1. Highlighting product names:
@@ -51,15 +51,111 @@ Examples:
 Use other tags when you need to show meaning, not just style:
 
 <strong> → for important text. The <strong> HTML element indicates that its contents have strong importance, seriousness, or urgency.Browsers typically render the contents in bold type.
-<em> → for emphasis. The <em> HTML element marks text that has stress emphasis. The <em> element can be nested, with each level of nesting indicating a greater degree of emphasis.
-<mark> → for highlighting relevant info. The <mark> HTML element represents text which is marked or highlighted for reference or notation purposes due to the marked passage's relevance in the enclosing context.
-<h1> to <h6> → for headings. The <h1> to <h6> HTML elements represent six levels of section headings. <h1> is the highest section level and <h6> is the lowest. By default, all heading elements create a block-level box in the layout, starting on a new line and taking up the full width available in their containing block.
 
-<i>     →
-<del>   →
-<sub>   →
-<sup>   →
-<small> →
-<style> → 
-website latest using del and mark →  
+<em> → for emphasis. The <em> HTML element marks text that has stress emphasis. The <em> element can be nested, with each level of nesting indicating a greater degree of emphasis.
+
+<mark> → for highlighting relevant info. The <mark> HTML element represents text which is marked or highlighted for reference or notation purposes due to the marked passage's relevance in the enclosing context.
+
+<h1> to <h6> → for headings. The <h1> to <h6> HTML elements represent six levels of section headings. <h1> is the highest section level and <h6> is the lowest. By default, all heading elements create a block-level box in the layout, Appearance:- starting on a new line and taking up the full width available in their containing block.Look bolder and bigger (depending on the number: <h1> is biggest, <h6> is smallest)
+
+Best practices:1. start from h1 and go down in order i.e. h2, h3 etc.
+2. Do not skip levels like jumping h1 to h3.
+3. Use only h1 per page (main title)
+4. Donot use heading just to make text bigger. Use CSS Font size property for that.
+
+For Screen Readers (Visually Impaired Users)
+1. People use headings to navigate quickly.
+2. If you skip levels, it confuses them (e.g., if there’s <h1> then <h3>, they wonder what happened to <h2>).
+3. Screen readers can list all headings so people can jump to what they want.
+
+"Nesting" means putting headings inside other sections.It Helps readers and screen reader users understand how the content is organized
+Screen readers can list all headings so users can jump to the section they want.
+
+Now there are multiple sections like 2 nav bars, then screen readers may confused.Then we label sections using aria-labelledby and id.
+
+For screen readers:
+They will announce:"Main Navigation", "Footer Navigation". So users know the purpose of each section — they don’t need to guess!
+
 -->
+
+<!-- Example of main nav and footer nav: -->
+<header>
+  <nav aria-labelledby="main-nav">
+    <h2 id="main-nav">Main Navigation</h2>
+    <!-- menu items -->
+  </nav>
+</header>
+
+<footer>
+  <nav aria-labelledby="footer-nav">
+    <h2 id="footer-nav">Footer Navigation</h2>
+    <!-- footer links -->
+  </nav>
+</footer>
+
+<!-- 
+<i>     → The <i> tag is used when we want to show that a part of our text is different from normal text — like:
+A thought, A technical term,A foreign word,A scientific name, A ship name,idiomatic text,, taxonomical designations,Alternative voice or mood,Transliterations,Ship or vessel names in Western writing systems, etc.
+This text is usually shown in italics by the browser.
+
+Use <i> for text that:
+->Is not part of the main flow of the sentence.
+->Has a different meaning or voice.
+->Isn’t strong or important enough for <strong> or <em>.
+-> Use <i> when the meaning or style of the text is semantically different, not just to make it look pretty.For appearance use css span or in HTML span element.
+
+  Example of span of css and span HTML element:
+  span {
+  font-style: italic;
+}
+
+-->
+  <p>This is <span>italic text</span> using CSS.</p>
+
+  <!-- Example for <i></i> use case: -->
+ <p>I thought <i>This is amazing!</i></p>
+<!-- A thought -->
+
+<p>The genus <i>Panthera</i> includes lions and tigers.</p>
+<!-- Scientific name -->
+
+<p>Bandwidth is a technical term: <i>bandwidth</i>.</p>
+<!-- Technical term -->
+
+<p>I love the Italian phrase <i lang="it">bella ciao</i>.</p>
+<!-- Foreign phrase -->
+
+<!-- In earlier versions of the HTML specification, the <i> element was merely a presentational element used to display text in italics.This is no longer true, as these tags now define semantics rather than typographic appearance. A browser will typically still display the contents of the <i> element in italic type, but is, by definition, no longer required to do so. To display text in italic type, authors should use the CSS font-style property. -->
+  
+<!-- 
+<sub>   → The <sub> HTML element specifies inline text which should be displayed as subscript for solely typographical reasons. Subscripts are typically rendered with a lowered baseline using smaller text.
+It is used for footnote numbers,mathematical variable numbers,Denoting the number of atoms of a given element within a chemical formula, etc.
+
+<sup>   → The <sup> HTML element specifies inline text which is to be displayed as superscript for solely typographical reasons. Superscripts are usually rendered with a raised baseline using smaller text. It is used for displaying exponents,
+Representing ordinal numbers, such as "4th",Displaying superior lettering, which is used in some languages when rendering certain abbreviations. For example, in French, the word "mademoiselle" can be abbreviated "Mlle".
+
+<small> → The <small> HTML element represents side-comments and small print — text that isn’t the main message but still important, like copyright and legal text/disclaimers,Terms and conditions, independent of its styled presentation. By default, it renders text within it one font-size smaller than normal text, such as from small to x-small.
+Even though <small> looks smaller, it’s not just for styling — it tells the browser and developers:
+"This is a side note or secondary info."
+For styling, we use span tag of html and fontsize property of css.
+Example of small tag:
+-->
+<p>This is my website.</p>
+<p><small>© 2025 All rights reserved.</small></p>
+<!-- 
+Example for styling :
+
+.tiny {
+  font-size: 0.8em;
+} 
+-->
+
+<p>This is <span class="tiny">tiny text</span>.</p>
+
+<!--
+<del>   →
+<style> → 
+website latest using del and mark →    
+-->
+
+
