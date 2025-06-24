@@ -17,7 +17,7 @@
     <p>this is <em>important</em></p>
  <!-- short cut to create unordered list :ul>li*4 -->
     <ul>
-        <li>b tag; strong tag</li>
+        <li><b>b tag</b>; <strong>Strong tag</strong></li>
         <li><i>i tag;</i> em tag</li>
         <li><small>small tag</small></li>
         <li><sub>sub tag</sub>,<sup>sup tag</sup></li>
@@ -151,11 +151,86 @@ Example for styling :
 -->
 
 <p>This is <span class="tiny">tiny text</span>.</p>
+<ins>mayank</ins><del>bharti</del>
 
 <!--
-<del>   →
-<style> → 
-website latest using del and mark →    
+<del>   → What is <del>?
+The <del> tag is used to show text that was deleted from a document.
+->Browsers usually show this with a line through the text (strikethrough).
+->It is helpful when showing changes, like in:
+->Edited articles
+->Code differences
+->Track changes in documents
+Use it when:
+->we want to show what content has been removed.
+->we're making changes visible to the user.
+->we’re showing revisions, like old prices or incorrect statements.
+
+Example:
+<p>This phone used to cost <del>$799</del> <ins>$699</ins>.</p>
+
+Example with attributes:
+<del cite="https://example.com/meeting-notes" datetime="2025-06-22T14:00:00Z">
+  Old pricing plan
+</del>
+
+-> Don’t use <del> just for strikethrough appearance.
+-> Use it only when we really mean that something was removed for a reason.
+-> To just style text with a line through, use CSS: <span style="text-decoration: line-through;">Old text</span>
+-> The presence of the del element is not announced by most screen reading technology in its default configuration. It can be made to be announced by using the CSS content property, along with the ::before and ::after pseudo-elements.
+
+del with special css property along with the ::before and ::after pseudo-elements:
+
+del::before {
+  content: " [deletion start] ";
+}
+
+del::after {
+  content: " [deletion end] ";
+}
+
+/* Plus this to hide visually */
+del::before,
+del::after {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+<ins> → The <ins> element can be used for the opposite purpose: to indicate text that has been added to the document.
+
+cite attribute→	A link to the reason or source of the change (e.g., meeting notes).
+
+datetime attribute→	The date and time when the text was deleted. Must be in valid format. This attribute indicates the time and date of the change and must be a valid date string with an optional time. If the value cannot be parsed as a date with an optional time string, the element does not have an associated timestamp. 
+
+website latest using del and mark →    W3Schools and MDN Docs
+
+→  What is style in HTML?
+The style global attribute allows we to add CSS styles directly to an HTML element.
+It changes how an element looks, such as:Background color,Font size,Alignment,Margins, padding, etc.
+It controls appearance, not meaning.Use it sparingly — prefer external or internal CSS for real projects(full websites).
+Good for quick tests or small changes.
+
+Why?
+It’s easier to manage, reuse, and update CSS when it’s separate from HTML.
+
 -->
+<!-- Example of style tag in HTML elements: -->
+
+<div style="background: #ffe7e8; border: 2px solid #e66465">
+  <p style="margin: 15px; line-height: 1.5; text-align: center">
+    Well, I am the slime from your video<br />
+    Oozin' along on your livin' room floor.
+  </p>
+</div>
+
+<!-- →  Global attributes in HTML are attributes that can be applied to any HTML element, regardless of its type. These attributes are defined by the HTML standard and provide universal functionality such as styling, accessibility, and scripting.List og global attributes: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes -->
+
+<p>If you need to relax, press the <b>S</b>tress reliever!</p>
+<button accesskey="s">Stress reliever</button>
+
 
 

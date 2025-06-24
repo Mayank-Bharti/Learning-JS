@@ -93,3 +93,68 @@ for small quotes which do not require line breaks, we use <q></q>
 for long quotes we use <blockquote></blockquote>
 both of the above use cite attribute which tells browser from where the quote was taken.
 <address></address> is used to specify address of business/person etc helps in SEO optimization -->
+
+<!-- 1. Blockquote tag: The <blockquote> tag is used when we want to include a long quote (a full sentence or paragraph) from another source.Usually, this is rendered visually by indentation.
+
+2. A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the <cite> element.
+
+3. cite attributes: A URL that designates a source document or message for the information quoted. This attribute is intended to point to information explaining the context or the reference for the quote.URL that give reference of quote.
+
+4. To change the indentation applied to the quoted text, use the CSS margin-left and/or margin-right properties, or the margin shorthand property.
+
+5. Quote tag: The <q> HTML element indicates that the enclosed text is a short inline quotation. Most modern browsers implement this by surrounding the text in quotation marks. This element is intended for short quotations that don't require paragraph breaks. -->
+
+    <!-- ->Block quote Example: -->
+
+<div>
+  <blockquote cite="https://www.huxley.net/bnw/four.html">
+    <p>
+      Words can be like X-rays, if you use them properly—they’ll go through
+      anything. You read and you’re pierced.
+    </p>
+  </blockquote>
+  <p>—Aldous Huxley, <cite>Brave New World</cite></p>
+</div>
+
+<!-- -> Quote Example: -->
+
+<p>
+  When Dave asks HAL to open the pod bay door, HAL answers:
+  <q
+    cite="https://www.imdb.com/title/tt0062622/quotes/?item=qt0396921&ref_=ext_shr_lnk">
+    I'm sorry, Dave. I'm afraid I can't do that.
+  </q>
+</p>
+
+<!-- 6. Cite tag: The <cite> tag is used to mark the title of a creative work — like a book, song, article, movie, or website.
+     The reference may be in an abbreviated form according to context-appropriate conventions related to citation metadata.Do not Use <cite> For: People’s names (authors, speakers, etc.) — just plain text, Places or brands (unless they are titles of works).By default, browsers show <cite> in italics.we can customize it using CSS if needed.
+
+    Use `<cite>` for…            | Examples                                 |
+| ---------------------------- | ---------------------------------------- |
+| Book titles                  | *Harry Potter*, *1984*                   |
+| Movies/TV shows              | *Interstellar*, *Breaking Bad*           |
+| Songs/music                  | *Bohemian Rhapsody*, *Fur Elise*         |
+| Poems                        | *The Road Not Taken*                     |
+| Paintings/artworks           | *Mona Lisa*, *Starry Night*              |
+| Blog posts, articles, tweets | *"My Thoughts on AI"*, *@elonmusk tweet* |
+| Software or websites         | *Photoshop*, *ChatGPT*                   |
+
+
+Example of cite tag: -->
+
+<figure>
+  <blockquote>
+    <p>
+      It was a bright cold day in April, and the clocks were striking thirteen.
+    </p>
+  </blockquote>
+  <figcaption>
+    First sentence in
+    <cite
+      ><a href="http://www.george-orwell.org/1984/0.html"
+        >Nineteen Eighty-Four</a
+      ></cite
+    >
+    by George Orwell (Part 1, Chapter 1).
+  </figcaption>
+</figure>
