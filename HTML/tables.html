@@ -1,0 +1,92 @@
+<!-- Lec-7 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table{
+            width:100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td,th{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        tr:nth-child(even){
+            background-color: #b9b9b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- short cut table: table>tr>th*3 
+     then for data: tr>td*3 and then duplicate by alt+shift+down arrow-->
+   <table>
+    <!-- It is not implemented more. Browser also reduces support -->
+    <colgroup>
+        <col span="2" style="background-color: cadetblue;"/>
+    </colgroup>
+    <tr>
+        <th>Country</th>
+        <th>country code</th>
+        <th>gmail</th>
+    </tr>
+    <tr>
+        <td>India</td>
+        <td>IN</td>
+        <td>india@google.com</td>
+    </tr>
+    <tr>
+        <td>United states of America</td>
+        <td>US</td>
+        <td>usa@google.com</td>
+    </tr>
+    <tr>
+        <td>China</td>
+        <td>CN</td>
+        <td>china@google.com</td>
+    </tr>
+    <tr>
+        <td>Japan</td>
+        <td>JP</td>
+        <td>japan@google.com</td>
+    </tr>
+   </table>
+    <!-- <a target="_blank" href="https://docs.emmet.io/cheat-sheet/">short cut CHEATSEAT emmet</a> -->
+     <table style="width: 20%;">
+        <tr>
+            <th colspan="3">Country</th>
+            <td>India</td>
+            <td>Japan</td>
+        </tr>
+        <tr>
+            <th>CODE</th>
+            <td>IN</td>
+            <td>JP</td>
+        </tr>
+     </table>
+</body>
+</html>
+
+<!-- If we not collapse border , then every individual cell have additional border with them which we collapse to look good.
+
+ row: horizontal
+ column: vertical
+ cell- a unit
+ table- complete row and column  
+ colspan
+ rowspan
+ col group
+ tfoot
+ table header- thead
+ tbody
+ table rows
+ table mdn docs
+ 
+ 
+thead -> mainly used for contain heading('th') row
+tbody -> Use for main content(normal row) of table
+tfoot -> Use for summary purposes of main content
+ -->
