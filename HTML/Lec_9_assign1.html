@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        #table{
+            width:100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td,th{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        tr:nth-child(even){
+            background-color: #eed2a8ec;
+        }
+        .imp{
+            background-color: blueviolet;
+        }
+        .head{
+            background-color: aquamarine;
+        }
+        #jakkas{
+            background-color: rgb(212, 212, 81);
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+        <tr class="head">
+            <th>Title</th>
+            <th>Video URL</th>
+        </tr>
+        <tr>
+            <td>Class ID and Iframe</td>
+            <td><iframe width="560" height="315" src="https://www.youtube.com/embed/I7LrS1z_WNA?si=AdbpS0ad7HNzf5t2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></td>
+        </tr>
+        <tr class="imp">
+            <td>Head Tag in HTML</td>
+            <td><iframe width="560" height="315" src="https://www.youtube.com/embed/-wMbf3qVNsc?si=Mlfz0NgULreLGdSa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></td>
+        </tr>
+        <tr>
+            <td>HTML Semantics</td>
+            <td><iframe width="560" height="315" src="https://www.youtube.com/embed/DSRMCZwM3YE?si=Ki6OWe5c0m5LIeGz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></td>
+        </tr>
+        <tr id="jakkas">
+            <td>Panchayat season 4 episode 8</td>
+            <td>
+                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe src="https://geo.dailymotion.com/player.html?video=x9lwums"
+                            style="width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border:none;"
+                            allowfullscreen
+                            title="Dailymotion Video Player"
+                            allow="web-share">
+                    </iframe>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
