@@ -1,0 +1,37 @@
+<!-- Lec-13 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Forms in HTML</h1> 
+   <form action="" method="get" accept-charset="utf-8" autocomplete="off" enctype="text/plain" target="_blank">
+        <label for="fname">First Name</label> <br>
+        <input type="text" placeholder="First name" name="" id="fname">
+
+        <select name="editors" id="">
+            <option value="vscode">vs code</option>
+            <option value="sublime">sublime</option>
+        </select>
+        <!-- confusting input type: -->
+         <input list="editors" name="editors">
+         <datalist id="editors">
+            <option value="vscode">vs code</option>
+            <option value="sublime">sublime</option>
+         </datalist>
+
+        <button type="submit">Pay</button>
+   </form>
+</body>
+</html>
+<!-- 
+Type of input forms: 
+
+using emmet abbreviation type "input:" and we can see all types.
+
+Read mdn docs form input
+
+Use of form is taking input from user.-->
