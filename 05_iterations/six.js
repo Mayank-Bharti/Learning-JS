@@ -1,7 +1,7 @@
 
 // const coding = ["js", "ruby", "java", "python", "cpp"]
 
-
+//forEach never return any value.
 // const values = coding.forEach( (item) => {
 //     //console.log(item);
 //     return item
@@ -11,9 +11,17 @@
 
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+//filter returns value.
+
+//Errors by beginners: when using () in filter then they return themself. But when we add curly baraces then a scope starts, for this case we have to manually add return statement.
+
+// const newNums = myNums.filter( (num) => num > 4 )
+
 // const newNums = myNums.filter( (num) => {
 //     return num > 4
 // } )
+
+//samething using forEach:
 
 // const newNums = []
 
@@ -25,6 +33,7 @@ const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // console.log(newNums);
 
+//filter example with objects:
 
 const books = [
     { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },

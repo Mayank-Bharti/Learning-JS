@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Shopping Cart</h1>
+        <ul id="item-list">
+            <li>Item 1: $10</li>
+            <li>Item 2: $5</li>
+            <li>Item 3: $8</li>
+        </ul>
+        <p>Total Price: $23.00</p>
+    </div>
+</body>
+</html>
+
+<!-- Document object model(DOM) :  -->
+<!-- 
+console.log(document); // Access the entire document object
+console.dir(document); // Access the properties of the document
+
+console.log(window); // Access the window object
+console.dir(window); // Access the properties of the window
+console.log(window.document); // Access the window object's document property -->
+
+<!-- DOM LOGICAL TREE BELOW: -->
+
+<!-- window-> document ->HTML->body,head
+
+1. body-> div
+div->attributes ,p, h1, ul
+h1-> text node
+p->text node
+ul->attributes,li
+li->text node
+
+2. head-> title,meta, link, script
+title->attribute, text node
+meta->attributes
+// Accessing elements using the document object -->
+
+<!-- The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree. With them, you can change the document's structure, style, or content. -->
+
+<!-- we can access many things using (document.) in the console
+console.log(document.body); // Access the body element
+console.log(document.head); // Access the head element
+console.log(document.title); // Access the title element
+console.log(document.links); // Access all link elements // we get html collection
+
+html collection is a collection of elements that are live, meaning they update automatically when the document changes.
+It is not array but it has length property and can be accessed using index and no other properties or methods of an array.
+console.log(document.getElementById('container')); // Access the element with id 'container' -->

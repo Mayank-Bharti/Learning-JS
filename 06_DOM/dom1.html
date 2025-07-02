@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5f1152a2;
+        }
+        #container {
+            width: 80%;
+            margin: 0 auto;
+            background:black;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        h1 {
+            color: #fff;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="cart">
+        <h1 id="title">Shopping Cart <span style="display: none;"> is nice bags</span></h1>
+        <ul id="item-list" class="item-list">
+            <li>Item 1: $10</li>
+            <li>Item 2: $5</li>
+            <li>Item 3: $8</li>
+        </ul>
+        <p>Total Price: $23.00</p>
+    </div>
+</body>
+</html>
+<!-- 
+1. document.getElementById('container')
+2. document.getElementById('container').getAttribute('id')
+2. document.getElementById('container').setAttribute('class', 'newcart') //This always overrides.
+
+so  we have to do this: 
+
+document.getElementById('container').setAttribute('class', 'newcart cart')
+
+3. document.getElementById('item-list').children 
+
+4. const title=document.getElementById('title')
+title.style.backgroundColor='green'
+title.style.padding='20px
+
+OR
+
+document.getElementById('title').style.backgroundColor='green'
+document.getElementById('title').style.padding='20px'
+
+5. If textContent,innerHTML,innerText have same value, 
+   document.getElementById('title').textContent
+   document.getElementById('title').innerHTML
+   document.getElementById('title').innerText
+
+   Then what is the difference?
+   
+   textContent: Gets the text content of the element, including hidden elements which we hides using styling.
+   
+   innerHTML: Gets the HTML content of the element, including tags.
+
+   innerText: Gets the visible text content of the element, excluding hidden elements and formatting.
+
+6. some good query selectors:
+   
+   All css selectors can be used with querySelector and querySelectorAll.
+
+    document.querySelector('.cart') // Selects the first element with class 'cart'
+   
+    document.querySelector('#container') // Selects the first element with id 'container'
+    
+    document.querySelector('h1') // Selects the first <h1> element
+    
+    document.querySelector('ul') // Selects the first <ul> elements
+    
+    document.querySelectorAll('li') // Selects all <li> elements
+
+    document.querySelector('ul').querySelector('li').style.backgroundColor='red' // Selects the first <li> inside the first <ul> and changes its background color
+
+    document.querySelector('ul').querySelectorAll('li').forEach((li)=>{
+        li.style.backgroundColor='red'
+    })// Selects all <li> inside the first <ul> and changes their background color
+
+    document.querySelectorAll('li').style.backgroundColor='red' //not possible due to nodelist not being a pure array.
+
+    document.querySelectorAll('li')[0].style.backgroundColor='red' // possible. //not array but array-like object.
+
+    document.querySelectorAll('li').forEach((li)=>{
+        li.style.backgroundColor='red'
+    }) //completely li will be red.
+
+7. Prototype mein jo define h wahi kar sakte hain. And there is difference between nodelist and array.Nodelist and HTML Collection are not pure arrays, they are array-like objects.
+
+8. document.getElementsByClassName('classname') // Returns a live HTMLCollection of elements with the specified class name.
+ 
+document.getElementsByid('id') // Returns a live HTMLCollection of elements with the specified id.
+
+document.getElementsByTagName('tagname') // Returns a live HTMLCollection of elements with the specified tag name.
+
+document.getElementsByName('name') // Returns a live NodeList of elements with the specified name attribute.
+
+document.querySelectorAll('.classname') // Returns a static NodeList of elements with the specified class name.
+   
+document.querySelectorAll('tagname') // Returns a static NodeList of elements with the specified tag name.
+   
+document.querySelectorAll('[attribute=value]') // Returns a static NodeList of elements with the specified attribute and value.
+
+9. We can convert HTML Collection to an array using Array.from() or the spread operator [...].
+
+   Example:
+   const items = document.getElementsByClassName('item');
+   const itemsArray = Array.from(items); // Converts HTMLCollection to an array
+   // OR
+   const itemsArray = [...items]; // Converts HTMLCollection to an array
