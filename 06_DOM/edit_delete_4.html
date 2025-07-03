@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: blanchedalmond;">
+    <ul class="lang">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // Problem in this method: when we say append child then it traverses complete list and adds the new element at the end.Here there is only one list then it will appended in O(1) time complexity but in realworld, there are many elements in the list then it will take O(n) time complexity.
+
+    // one function call n time traversal then n time function call then there will be n*n time traversal of list.
+
+    //innerHTML takes O(n) time complexity because it traverses the complete list and then adds the new element at the end of the list.
+
+    // So, we need to find a solution to add the new element in O(1) time complexity.
+ 
+//Methods of adding elements in the list:
+
+    function addlang(langname){
+        const li=document.createElement("li")
+        li.innerHTML=`${langname}`
+        const ul=document.querySelector(".lang")
+        ul.appendChild(li)
+    }
+    //for big projects we use this method to add the new element in the list.Because this is optimised method.
+    function addoptilang(langname){
+        const li=document.createElement("li")
+        // const addtext=document.createTextNode(langname)
+        // li.appendChild(addtext)
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector(".lang").appendChild(li)
+
+    }
+    addlang("Python")
+    addlang("Java") 
+    addlang("C++")
+    addlang("TypeScript")
+    addlang("PHP") 
+    addoptilang("Ruby")
+    addoptilang("Go")   
+
+    //Methodsof editing elements in the list:
+     
+    const secondlang=document.querySelector(".lang li:nth-child(2)")
+    console.log(secondlang);
+    // secondlang.innerHTML="Mojang"  => take time complexity.
+    const newli=document.createElement("li")
+    newli.textContent="Mojang"
+    secondlang.replaceWith(newli) // secondlang.replaceWith(newli) replaces the second element with the new element
+
+    const firstlang=document.querySelector("li:first-child")
+    firstlang.outerHTML='<li>Golang</li>' // replaces the first element with the new element
+
+    //Methods to delete elements in the list:
+
+    const lastlang=document.querySelector("li:last-child")
+    lastlang.remove() // removes the last element from the list
+     
+</script>
+</html>
