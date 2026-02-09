@@ -1,0 +1,17 @@
+-> Default JS => Synchronous
+    |--> Single threaded
+
+-> Execution context
+       |-->execute one line of a code at a time.
+       |-->console log -> 1
+       |--> console log -> 2
+       |--> CALL STACK   MEMORY HEAP
+       |--> each operation waits for the last one to complete 
+            before executing
+-> Blocking code: Block the flow of program -> Read file Sync.
+-> Non blocking code: Does not block execution-> read file Async
+
+Some time blocking better and sometime non blocking. It depend on use case. E.g registration of user, while reading file we sent success message but there is error while reading , so here non blocking code fails , so in this use case, we write blocking code.
+
+//json formatter to read APIs
+//XML HTTPs request based on AJAX programming: read mdn docs

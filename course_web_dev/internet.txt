@@ -1,0 +1,19 @@
+How does Internet works?
+
+Ans: 192.168.2.5--> ISP --> DNS(Phone book of ISP e.g. NSLOOKUP.io or some built in record) -->They return 76.76.21.21 to ISP and then ISP goes to internet and thus we open chaicode.com
+
+Internet is to connect one computer to another.
+--> If i get my own ip address then can i just host my own website?
+Ans: Yes , i can do but problem is we have to keep our computer always up and running all time. That is why there are some providers which are specialized in keeping their computer running all time. E.g. AWS, Google cloud, azure,linode,DO, etc..
+
+Browser --->sent a request --> server --> DB
+DB<----server--> sends a response(HTML,CSS,JS)---> Browser
+
+Server is just a software which serves.
+
+Frontend--> HTML,CSS,JS
+Backend --> JS and Database(Mysql,Mongodb)
+APIs--> In between frontend and backend, its API. It is medium when frontend and backend interact.It sends data in universally acceptable format i.e. JSON.
+
+Browser --->sent a request-->API(JSON) --> server --> DB
+DB<----server--> sends a response(HTML,CSS,JS)-->API(JSON)---> Browser

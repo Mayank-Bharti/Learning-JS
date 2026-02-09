@@ -1,51 +1,86 @@
 <!-- Lec-6 -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>link tag</title>
     <style>
-        body{
-            background-color: #414141;
-            color: #FFFFFF;
-        }
+      body {
+        background-color: #414141;
+        color: #ffffff;
+      }
     </style>
-</head>
-<body>
-    <a target="_blank" href="https://google.com">Google</a> 
-    <h2><a target="_blank" href="https://stackoverflow.com/questions/18470097/difference-between-self-top-and-parent-in-the-anchor-tag-target-attribute">Link to read</a></h2>
+  </head>
+  <body>
+    <a target="_blank" href="https://google.com">Google</a>
+    <h2>
+      <a
+        target="_blank"
+        href="https://stackoverflow.com/questions/18470097/difference-between-self-top-and-parent-in-the-anchor-tag-target-attribute"
+        >Link to read</a
+      >
+    </h2>
 
     <!-- <a href="#section2">SCROLL</a> -->
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores reiciendis minima ducimus dolor numquam ullam corrupti commodi sed voluptatum aliquid.</p>
-    <img src="https://images.pexels.com/photos/30052108/pexels-photo-30052108.jpeg" alt="no image" width="300px" height="300px">
-    <img src="./radheradhe.jpg" alt="no image" width="300px" height="300px">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+      reiciendis minima ducimus dolor numquam ullam corrupti commodi sed
+      voluptatum aliquid.
+    </p>
+    <img
+      src="https://images.pexels.com/photos/30052108/pexels-photo-30052108.jpeg"
+      alt="no image"
+      width="300px"
+      height="300px"
+    />
+    <img src="./radheradhe.jpg" alt="no image" width="300px" height="300px" />
     <picture>
-            <source media="(min-width:650px)" srcset="./radhe_radhe1.jpg" />   
-            <source media="(min-width:460px)" srcset="./radhe_radhe1.jpg" />   
-            <img src="./radhe_radhe.jpg" alt="no image" width="300px" height="300px"> 
+      <source media="(min-width:650px)" srcset="./radhe_radhe1.jpg" />
+      <source media="(min-width:460px)" srcset="./radhe_radhe1.jpg" />
+      <img
+        src="./radhe_radhe.jpg"
+        alt="no image"
+        width="300px"
+        height="300px"
+      />
     </picture>
 
     <!-- <p id="section2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sequi eos accusamus rem asperiores, fuga architecto harum eum beatae aliquid dolor eveniet sed repellat impedit. Tenetur a consectetur nam neque?</p> -->
 
     <!-- an image map generator : Like wise facebook and instagram tags friends from image we click or  tagging friends in images on social media platforms-->
-    <img src="radhe_radhe.jpg" usemap="#image-map">
-
+    <img src="radhe_radhe.jpg" usemap="#image-map" />
+    <figcaption></figcaption>
     <map name="image-map">
-        <area onclick="one()" target="" alt="" title="" href="" coords="579,470,819,692" shape="rect">
-        <area onclick="two()" target="" alt="" title="" href="" coords="455,1735,892,1824" shape="rect">
+      <area
+        onclick="one()"
+        target=""
+        alt=""
+        title=""
+        href=""
+        coords="579,470,819,692"
+        shape="rect"
+      />
+      <area
+        onclick="two()"
+        target=""
+        alt=""
+        title=""
+        href=""
+        coords="455,1735,892,1824"
+        shape="rect"
+      />
     </map>
     <script>
-        function one() {
-            alert("you clicked one")
-        }
-        function two() {
-            alert("you clicked two")
-        }
+      function one() {
+        alert("you clicked one");
+      }
+      function two() {
+        alert("you clicked two");
+      }
     </script>
-</body>
+  </body>
 </html>
-
 
 <!-- LINk TAG:
 

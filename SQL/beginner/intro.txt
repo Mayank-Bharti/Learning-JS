@@ -1,0 +1,181 @@
+What is SQL?: Everything generates data and data is every where.
+Where to store data?=> in excel, spreadsheet, text files,etc
+Companies generate massive data and it can't store in simple files.
+
+Dataase is a just a container for storing data but instead of just dumping files into folders, database organise our data, so that it is easy to access, manage and to search.
+
+How to talk to DB =>SQL=>Language of DB 
+
+why DB?
+easy,simple and fast
+handle millions of data
+secure and control who to access 
+
+DBMS is a system which manage all different requets to our database from  user, application, etc. through SQL or any other software.
+
+DB stores data.
+SQL speak to Databases.
+DBMS manages Database.
+
+Types of DB: Relational DB=> SQL , [Key Value, Column Based, Graph DB,Document DB]=> No SQL 
+
+                               [ 1. DOCUMENT ]
+                                     |
+                          (MongoDB) -+-> [Docs]
+                                     |
+          [5. GRAPH ]                  |                  [2.  RELATIONAL ]
+             |                       |                        |
+  (Neo4j) ---+-> [Nodes] <------- DATABASE -------> [Tables] -+-> (MySQL)
+                                     |                        +-> (PostgreSQL)
+                                     |                        '-> (MS SQL Server)
+             |                       |
+      [ 4.COLUMN-BASED ]             |                  [ 3. KEY-VALUE ]
+             |                       |                        |
+ (Cassandra) +-> [Columns]           |            [Key:Value] +-> (Redis)
+  (Redshift) '                       |                        '-> (DynamoDB)
+
+Database Structure (Server → Database → Schema → Table)
+
+    Server[Server]
+
+    Server --> DB1[Database: Sales]
+    Server --> DB2[Database: HR]
+
+    DB1 --> S1[Schema: Orders]
+    DB1 --> S2[Schema: Customers]
+
+    S1 --> T1[Table: Items]
+    S1 --> T2[Table: Products]
+
+    S2 --> T3[Table: Profiles]
+
+Table Structure (Rows, Columns, Primary Key)
+
+    Table[Table: Students]
+
+    Table --> Col1[ID (Primary Key)]
+    Table --> Col2[Name]
+    Table --> Col3[Score]
+    Table --> Col4[Birthdate]
+
+    Col1 --> R1[1]
+    Col1 --> R2[2]
+    Col1 --> R3[3]
+
+    Col2 --> N1[Maria]
+    Col2 --> N2[John]
+    Col2 --> N3[Peter]
+
+Data Types Classification
+
+    DT[Data Types]
+
+    DT --> Num[Numeric]
+    Num --> INT[Int: 1, 2, 30]
+    Num --> DEC[Decimal: 3.14, 100.50]
+
+    DT --> Str[String / Text]
+    Str --> CHAR[CHAR: 'A']
+    Str --> VARCHAR[VARCHAR: 'Maria']
+
+    DT --> DTIME[DateTime]
+    DTIME --> DATE[DATE: 2025-10-30]
+    DTIME --> TIME[TIME: 09:30:00]
+
+Types of SQL commands:
+
+SQL is used to create structures (DDL), modify data (DML), and fetch data (DQL) from a database using tables as the core storage unit.
+
+      [ USER ]           [ DATABASE ]           [ ANALYST ]
+          |                  __|__                  ^
+    (SQL: CREATE) --------> |     | <---- (SQL: SELECT)
+          |                 |TABLE|                 |
+          v                 |____ |                 |
+    +------------+            ^              +------------+
+    |    DDL     |            |              |    DQL     |
+    +------------+      (SQL: INSERT)        +------------+
+    | - CREATE   |            ^              | - SELECT   |
+    | - ALTER    |            |              +------------+
+    | - DROP     |      +------------+             
+    +------------+      |    DML     |             
+                        +------------+             
+                        | - INSERT   |             
+         [ APP ] -----> | - UPDATE   |             
+                        | - DELETE   |             
+                        +------------+
+
+DDL (Data Definition Language):
+Purpose: Defines the database structure.
+Commands: CREATE, ALTER, DROP
+
+DML (Data Manipulation Language):
+Purpose: Manages data within the tables.
+Commands: INSERT, UPDATE, DELETE
+
+DQL (Data Query Language):
+Purpose: Used to fetch or retrieve data.
+Commands: SELECT
+
+
+Why SQL?
+
+Talk To Data: SQL allows interaction with databases and structured table data.
+
+High Demand: Key roles requiring SQL include Software Developer, Data Analyst, Data Scientist, and Data Engineer.
+
+Industry Standard: SQL is the standard for tools like Power BI, Tableau, Kafka, Spark, and Synapse.
+
+                  _____________________
+                 |                     |
+                 |   TALK TO DATA      | ----> [ Databases, SQL, Tables ]
+          /----  |_____________________|
+         |
+         |        _____________________        
+                 |                     |        /-- Software Developer
+  WHY?   |       |                     |      /--- Data Analyst
+ [ SQL ] --------|    HIGH DEMAND      | ----+---- Data Scientist
+         |       |_____________________|      \--- Data Engineer
+         |
+         |        _____________________        /-- Power BI, Tableau
+          \----  |                     |      /--- Kafka, Spark
+                 |  INDUSTRY STANDARD  | ----+
+                 |_____________________|      \--- Synapse
+
+
+Alias (AS) is shortened name or label assigned to a column or table in a query.
+
+Group By Rule: All columns in the SELECT must be either aggregated or included in GROUP BY.
+e.g. 
+
+Find total score and total number of customers for each country.
+
+SELECT
+  country,
+  SUM(score) AS total_score,
+  COUNT(id) AS total_customers
+
+FROM customers
+GROUP BY country
+
+Note: Don't use DISTINCT unless it is necessary; it can slow down query.
+
+For MySQL query, we use LIMIT instead of TOP (MS SQL Server)
+
+e.g.:
+
+My SQL:
+
+SELECT customer_number
+FROM Orders
+GROUP BY customer_number
+ORDER BY COUNT(order_number) DESC
+LIMIT 1;
+
+MS SQL:
+
+SELECT TOP 1
+    customer_number
+FROM Orders
+GROUP BY customer_number
+ORDER BY COUNT(order_number) DESC;
+
