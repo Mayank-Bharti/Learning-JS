@@ -1,0 +1,184 @@
+1. ER model is high level data model works in conceptual level based on perception of real world that consists of collection of basic objects called entities and of relationships among these objects.
+
+Graphical representation of ER model is ER Diagram, which acts as a blue print of DB.
+
+2. Entities has some attributes which describe entities.Entities need these attributes to describe it.
+
+e.g. Student are entity -> stud id, name, phone, address, batch, course are attributes.
+
+3. properties of entity: 
+
+3.1. Entity can be Uniquely identify. So entity must have unique id (unique attributes) which is also called as primary key
+e.g. student entity => unique attributes (stud id) => primary key 
+
+4. Entity set => Set of entities of same type that share same properties or attributes.
+
+e.g. student is entity set because these are schema of students which confirmed by many students and one student is one entity of this student entity set.
+
+In terms ER model or ER diagrams, sense of entity or entity set is used in a same way in a slang language but actually both are different.
+
+5. Attributes: To describe any entities we have some properties which is called as attributes.
+
+5.1. Properties of Attributes:
+    a. There is some consistency constriants in attributes. e.g. cust id never be NULL, loan domain is defined like only car loan, business loan not personal loan.
+
+5.2. Types of attributes: 
+    a. Simple: can't be divides further. e.g. customer's account number.
+
+    b. composite:  can be divided in sub parts 
+    i.e. other attributes.
+
+    e.g. Name divided in first name, middle name and last name, Address can also be divided in street, city, state, pin code.
+
+    c. Single-valued: only one value attribute.
+    e.g. student ID , Loan no.
+
+    d. Multi-valued: more than one value.
+    e.g. phone no(multiple phone no.), nominee-name on some insurance, dependent-name, etc. Limit constraint may be applied, upper or lower limits.
+
+    e. Derived: value of this type of attributes can be derived from value of other related attributes. e.g Age attributes derived from DOB, loan age , etc.
+         
+6. Relationships: Relationship between two entities. Association among two or more entities
+e.g. Banking => entitites => customer, loan, account
+relationship: customer borrow loan then borrow is relation.
+Customer deposit account then deposit is a relation.
+
+relationship symbol in er diagram => diamond sign
+
+7. Null Value: Attribute whose value is not assigned. It gives 3 meaning: 
+a. Not applicable: value does not exist e.g. middle name.
+b. Unknown: indicate missing entry e.g. Name value is Null.
+c. Unknown: Not known value yet like salary of employee is Null till not known. 
+
+8. Strong and Weak entity:
+   Strong entity: Independent existence: we can recognise it using primary attribute or primary key. 
+   e.g. student is a strong entity as stud id is primary key which recognise it independent existence.
+
+   Weak entity: Not able to recognise using primary attribute, it is dependent on strong entity.No primary key for weak entity.
+   e.g. Loan- payment relationship where payment is weak entity as if loan not there there payment schedule has no existence. So we can define payment as weak entity which is associate with Loan.
+
+9. Strong and weak relationship:
+
+   Strong relationship: Between 2 independent entities. e.g. customer, places, order are strong relationship because everyone has independent existence recognise using primary key so all are strong entity.
+
+   Weak relationship: Between weak entity and its owner/strong entity. e.g. Loan-payment relationship where loan is strong entity and payment is weak entity are weak relationship.
+
+10. Degree of Relationship: No of entities/participants in one particular relation.
+    a.  Unary: Only one entity participates. 
+                e.g.,Employee manages employee.
+    b.  Binary: two entities participates. 
+                e.g., Student takes Course.
+    c.  Ternary relationship: three entities participates. 
+                e.g., Employee works-on branch,   employee works-on job.
+    Note: Binary are common most questions.
+
+11. Relationship constriants: 
+    11.1. Mapping cardinality/Cardinality Ratio: Number of entities to which another entity can be associated via a relationship.
+                  OR
+    How many entities in one entity set A is associated with or having relationship with no. of entities in entity set B.
+    
+    Types of mapping cardinality: 
+    a. One to One(1:1): A and B are entity sets and an entity of B is associated with atmost one entity of A and vice versa. e.g. citizen has aadhar card.
+
+    b. One to many(1:N): A and B are entity sets and entity in A can be associated with N entities in B, while entity in B is associated with at most one entity in A. e.g. citizen has vehicle.
+
+    c. Many to One(N:1): A and B are entity sets and entity in A is associated with at most one entity in B, while entity in B can be associated with N entities in A. e.g. Course taken by professor.
+
+    d. Many to Many(N:N): A and B are entity sets and entity in A associated with N entity in B, while entity in B also associated with N entity in A. e.g. customer buys product, student attend course, etc.
+
+    11.2. Participation Constraints(Minimum Cardinality constraints):
+    Types of participation constraints:
+    a. Partial participation: Not all entites are involved in relationship instance.
+    b. Total participation: each entity must be involved in at least one relationship instance.
+
+    e.g. customer borrow loan, loan has total participation as it can't exist without customer entity. And customer has partial participation because there must be atleast one customer who has not taken any loan.
+
+    Note: Weak entity has total participation constraint. But strong entity may/may not have total participation.
+
+
+Basic ER Features studied in the LEC-3, can be used to model most DB features but when complexity increases, it is
+better to use some Extended ER features to model the DB Schema.
+
+12. Extended ER Features: 
+
+12.1: Specialization: Specialisation is splitting up the entity set into further sub entity sets on the basis of their functionalities,
+specialities and features. It is a Top-Down approach.
+
+e.g., Person entity set can be divided into customer, student, employee. Person is superclass and other specialised entity sets are subclasses. We have “is-a” relationship between superclass and subclass. Depicted by triangle component
+
+=> Why specialization?
+   a. Certain attributes may only be applicable to a few entities of the parent entity set.If we don't do specialization, it creates redundancy.
+   b. DB designer can show the distinctive features of the sub entities.
+   c. To group such entities we apply Specialisation, to overall refine the DB blueprint.
+
+12.2: Generalization: Reverse of specialization. It is Bottom up approach.
+
+DB Designer, may encounter certain properties of two entities are overlapping. Designer may consider to make a new generalised entity set. That generalised entity set will be a super class.
+“is-a” relationship is present between subclass and super class.
+
+e.g., Car, Jeep and Bus all have some common attributes, to avoid data repetition for the common attributes. DB designer may consider to Generalise to a new entity set “Vehicle”.
+
+=> Why Generalisation?
+   a. Makes DB more refined and simpler.
+   b. Common attributes are not repeated.
+
+12.3: Attribute Inheritance: Both Specialisation and Generalisation, has attribute inheritance.
+The attributes of higher level entity sets are inherited by lower level entity sets.
+
+E.g., Customer & Employee inherit the attributes of Person.
+
+12.4: Participation Inheritance: If parent entity set participates in any relationship then its child entity sets also participate in that relationship.
+e.g. Person has Vehicle is a relation between person and vehicle then this relationship is automatically applied to employee and customer because both employee and customer are child of person.
+
+12.5: Aggregation: 
+
+e.g.:  Employee works-on branch,   employee works-on job. I want a manager which manages => {employee, branch,job}
+
+How i show this aggregation?
+=> We can make one more relation manages from all three {employee, branch, job} which is quarternery relation which result in redundancy information because manager wants to manages combination of {employee, job, branch} not single employee, job, and branch which i draw here by connecting each line to manages relationship. We just make one entity of "Employee works-on branch,   employee works-on job." this relation ship and then make another relation manages and connect to manager which reduces redundancy, Just aggregated all relationship "Employee works-on branch,   employee works-on job." to single entity.
+
+12.5.1: How to show relationships among relationships? - Aggregation is the technique.
+
+12.5.2: Abstraction is applied to treat relationships as higher-level entities. We can call it Abstract entity.
+
+12.5.3: Avoid redundancy by aggregating relationship as an entity set itself
+
+13: Steps to make ER Diagram: 
+
+13.1: Identify entity sets.
+13.2: Identify attributes and their types.
+13.3: Relationship between these entity sets then degree of relationship, constraints: mapping cardinality, participation constraints.
+
+e.g. Banking system ER Model in banking.png
+SRS document(DB requirement):
+1. Banking system=> Branches (name: Primary key)
+2. Bank=> Customers
+3.  Customers => account, take loan
+4.  customer associated with some banker
+5. Bank has employees
+6. Accounts => saving a/c, current a/c
+7.  Loan originated by Branch and 1 loan is hold by multiple customers and payment schedule in loan.
+
+1. Entity set: Branch, customer, Employee, saving a/c, current a/c, loan, payment(Loan) (weak entity)
+
+Here we are thinking about bottom up approach as there are special features of saving a/c and current a/c but we can generalize it to account and common feature are inherited to child entity.
+
+2. Attributes: 
+
+a. Branch: name, city, assets, liabilities
+b. Customer: Cust_id(single), name, address(composite), contact(multi valued), DOB, Age(derived)
+c. Employee: emp-id, name, contact no, dependent name(multi-valued), years of service(derived date), start date(single valued)
+d. saving account: acc-no, balance, interest rate, daily with drawal limits.
+e. current a/c: acc-no, balance, per transaction charges, overdarft amount
+f. Generalised entity: account=> acc-no, balance
+g. loan: loan-no, amount
+h. weak enntity payment: payment-no, data, amount
+
+3. Relationships and constraints:
+
+1. customer borrow loan(m:n) loan(total participation)
+2. Loan originated by branch(n:1): Loan(total participation)
+3. Loan and loan payment(1:n) (weak relation ship )payment(total relation ship)
+4. Customer deposit account(m:n)
+5. Customer banker employee (N:1)
+6.  Employee manages by employee (N:1)

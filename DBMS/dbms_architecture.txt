@@ -1,0 +1,98 @@
+1. Abstraction: simplify system for user by hiding certain details.e.g. car driving, tally: business software used by commerce users.
+
+DBMS also applies abstraction.
+
+Main goal: Every user has different view for DB.e.g.  for logistics only certain information is viewed, customer service department need another certain details, etc in Amazon.
+
+Schema: design
+
+2. Three schema Architecture:
+
+2.1. Physical level/ Internal level: Lowest level abstraction. It provides how data is stored physically with the help of physical schema. eg. imgae stored in SSD.
+
+image=> collection of bits/bytes => size=1mb=> compression => run length encoding => 50 kb size of image.
+
+Physical schema is a blueprint which describes physical storage structure of DB, how data is stored using encryption, compression, hashing, etc.
+
+Goal: Define Algorithms that allow efficient access to data.
+
+2.2. Logical Level/ Conceptual level: What data is stored in DB and what relationship of data in DB.
+Physical level to logical level mapping. 
+Advantage: Physical level independence.
+Goal: Easy to used
+
+2.3. View level/ External level: highest level of abstraction.
+View schema: Every user has different view for DB.e.g.  for logistics only certain information is viewed, customer service department need another certain details, etc in Amazon.
+
+At external level, a DB contains several schemas that sometimes called as sub-schema. This sub-schemas used to describe different view of DB.
+
+At views, also provide security mechanism to prevent users from accessing certain parts of DB.
+
+3. INSTANCE OF DB: Information stored in DB at a particular point of time.
+e.g.: 12:00 am => 2 students
+Next 12:00 am: 4 students.
+
+Nomenclature: Logical level schema ko DB schema bola jata h.
+
+4. DB SCHEMA(LOGICAL SCHEMA): 
+4.1. Attributes of table.
+4.2. Consistency constraints.(Primary key never NULL)
+4.3. Relationships
+
+5. Data models: way to describe design of DB at logical level.Underlying structure of DB. Collection of conceptual tools for describing data, data relationships, data semantics, & consistency constraints. E.g. ER Model, relational model, object oriented model, object relational data model.
+
+6. DBMS=> use Language to interact => 1. schema define(DDL: Data Definition Language)(student schema: student id, name, email,phone,address) 2. Insert, Delete, Update, Retrieval (DML: Data Manipulation Language)
+
+Practically, both features DDL and DML are provided in single DB language, e.g. SQL Language 
+
+Query langauage: a part of DML to specify statement requesting retreival of info.
+
+=> How app access DB?
+
+App=> JS, C,C++,Py (Host language)
+DB=> SQL 
+
+then how APP Interact DB:Interface(JDBC for Java and ODBC for C/C++): Host language convert to query language.
+
+e.g. JAVA => APP => SQL QUERY => Interface(JDBC): transform to actualSQL Query => SQL SERVER DBMS 
+
+7. DBA(Database Administrator): central control of DB (both data and programs that access those data).It works mostly in logical level.
+
+Fn of DBA: schema defn, storage structure and access methods, authorization control, routine maintenance: periodic backups, security patches, any upgrades.
+
+8. DBMS Application Architecture: 
+Client Machine: remote DB user
+Server machine:Actual DB system
+
+8.1. T1 architecture: Client+server+DB all in same machine. e.g.: web application: local host server(my pc)+client(my pc) + DB(my pc)
+
+8.2. T2 architecture: 
+|User---Application client| ==> NETWORK ==> 
+|Database system.|  
+
+Here client machine directly communicates to DB.
+
+e.g. Client --SQL Query(JDBC) -->  Server (Remote DB) => SQL Query directly sent to DB.
+
+Here 2 pc involved not in same machine.
+
+8.3. T3 architecture: 
+|User---Application client| ==> NETWORK ==> 
+|Application server --- Database system.|
+
+It is best for WWW Applications.
+
+Here client server machine communicates to APP server and app server calls to DB then DB sent response to app server and app server will send response to client.
+
+Here 3 pc involved means it works in 3 machines.
+
+Big business project uses 3 tier architecture.
+
+Advantages of 3-tier Architecture:
+
+1. Here multiple server(distributed application server), we can make.Thus scalability has increased.
+
+2. APP server acts as middle layer, So data integrity is maintained as corrupt files is directly not access to DB which minimizes chance of data corruption.
+
+3. Security and consistency is maintained as interface is there as middle layer and client can't access DB directly.
+

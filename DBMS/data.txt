@@ -1,0 +1,34 @@
+1. Data: data is stored in the form of bits/bytes.Collection of raw bytes.
+
+e.g.: Images or int: collection of bytes
+
+2. Data has no meaning. When data is processed or interpret then we get some meaning which is called information.
+
+e.g. A person has a business => we have to do presence of business in social media.
+
+Marketing company=> posts business details in FB, Insta, Linkedin => Social media with more likes have more publicity to do.
+
+Data=> Like count => 4 byts integers => Process => Conclusion => Instagram has more likes.=> Decision making => focus on Insta.
+
+Data is a new oil nowadays.Data is very important for Businesses also.
+
+Databases : Electronic place/system where data is stored st that it is easily accessed, managed, and Updated.
+
+DBMS:Manages two things: 1. DB(to store data)  2. Set of programs: access, add, update, delete.
+Store and manage and efficient.
+
+DBMS is act as interface between DB and user.
+
+3. Why to make complex system ? Why not file system?
+
+Earlier file system is used but its accessibility is not there.
+There are lots of problem in it.
+
+1. Data redundany and inconsistency.
+2. Difficult in accessing data.
+3. Data isolation (data in different format .txt or .jpg, etc)
+4. Integrity problem: constraints:balace not  less 1000 is given but user wants to change limit which is again difficult and programmer again write code.
+
+5. Atomicity problem : like transactions.
+6. Concurrent Access anomalies: we can request from multiple things like debit and phone concurrently.
+7. Security problem.
