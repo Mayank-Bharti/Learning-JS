@@ -182,3 +182,12 @@ h. weak enntity payment: payment-no, data, amount
 4. Customer deposit account(m:n)
 5. Customer banker employee (N:1)
 6.  Employee manages by employee (N:1)
+
+Homework:
+
+1. Online delivery system
+2. University
+3. GST billing system.
+4. Facebook database system.
+
+
