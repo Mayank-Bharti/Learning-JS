@@ -172,7 +172,7 @@ d. saving account: acc-no, balance, interest rate, daily with drawal limits.
 e. current a/c: acc-no, balance, per transaction charges, overdarft amount
 f. Generalised entity: account=> acc-no, balance
 g. loan: loan-no, amount
-h. weak enntity payment: payment-no, data, amount
+h. weak entity payment: payment-no, data, amount
 
 3. Relationships and constraints:
 
@@ -190,4 +190,97 @@ Homework:
 3. GST billing system.
 4. Facebook database system.
 
+1. GST Billing system:
 
+Entity set: employee, customer, product, Invoice, Invoice_item(weak entity depends on invoice entity), Inventory_log(weak entity depends on product entity), e-way bill(weak entity depends on invoice entity), tax_settings
+
+employee and customer are user.So we can generalize it to user.
+
+Invoice = A file/folder 📁
+Invoice_Item = Papers inside folder 📄
+You can create an empty folder.
+But you cannot have a paper without a folder.
+So folder = Strong
+Paper = Weak
+
+Attributes:
+
+User--> user-id(PK), name, phone, email, password_hash, address, created_at
+Employee--> role
+Customer--> gst_no
+
+Product-> prod_id, prod_name, description, category, price, stock-quantity, gst-applicable(bool), gst-rate, low-stock-threshold, created-at
+
+Invoice--> invoice-id, invoice-no, cust-id(FK->User), employee-id(FK-> user), invoice-date, invoice type(gst/non gst), total-amount, total-tax, discount, status(paid/unpaid/cancelled),payment-mode(cash/upi,card), created-at
+
+invoice-item--> invoice-id(FK-> Invoice), prod-id(FK--> Product), quantity, unit-price, gst-rate, tax-amount, total-amount => composite primary key=> invoice-id+prod-id 
+
+Inventory_log=> log_id(PK), prod-id(FK), change-type(ADD/SALE/RETURN/UPDATE), quantity_changed, reference_invoice_id(nullable FK), log_date
+
+E-way bill--> eway_bill_id (as PK), invoice_id(FK), transporter_name, vehicle_no, generated_date, validity_date, status
+
+Tax_settings--> tax_id(PK), tax_name(CGST/SGST/IGST), tax_rate, applicable_from, applicable_to, status(active/inactive)
+
+Relationship:
+
+User (1) —— (M) Invoice
+Invoice (1) —— (M) Invoice_Item
+Product (1) —— (M) Invoice_Item
+Product (1) —— (M) Inventory_Log
+Invoice (1) —— (1) eWay_Bill
+Tax_Settings (1) —— (M) Product
+
+2. Facebook database system:
+
+Faeture and use cases:
+1. profile-> user-profiles -> friends
+2. user can posts
+3. post -> contains-> text-content, images, videos, etc
+4. post -> like, comment
+
+Entiy set: user-profile, user-post, post-comments, post-likes
+
+Attributes + types:
+
+1. user-profile --> name(composite), username(PK), email(multi-valued),password, contact-no(multi-valued), dob, age(derived)
+
+2. user-post--> post-id, text-content, images(multi-valued), videos(multi-valued), created-time stamp, modified-time stamp
+
+3. post-comments--> post-comment-id(PK), text-content, time stamp
+4. post-like --> post-like-id(PK), time-stamp
+
+Relationship and constraints:
+
+1. User-profile friends user-profile(M:N)
+2. user-profile posts user-post(total participation)(1:N)
+3. user-profile can post-comments (1:N)(total participation)
+4. user-profile can post-likes(1:N)(total participation)
+5. user-post has post-comments (1:N)(total participation)
+6. user-post has post-likes (1:N)(total participation)
+
+ER Diagram of FB is FB.png
+
+University Course management ER Diagram:
+
+Student:
+1. Register/login of student
+2. enrollement in course by student
+3. view available course
+4. drop course
+5. view course details 
+6. view grades
+
+Admin:
+1. Add Course
+2. Update Course
+3. Delete Course
+4. Assign Faculty to Course
+5. Set Course Credits
+6. View Course List
+
+Faculty:
+1. View Assigned Courses
+2. Upload Course Materials
+3. Manage Course Content
+4. View Enrolled Students
+5. Enter Marks
